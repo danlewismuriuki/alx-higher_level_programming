@@ -65,7 +65,7 @@ class Rectangle:
     def area(self):
         """ Instance returns the area of the Rectangle """
         if self.__width == 0 or self.__height == 0:
-            return 0;
+            return 0
         return (self.__width * self.__height)
 
         """ Instance returns the perimeter of the Rectangle """
