@@ -22,7 +22,6 @@ class Rectangle:
         self.height = height
         Rectangle.number_of_instances += 1
 
-
     def __del__(self):
         """Prints the message Bye rectangle... when an instance of Rectangle
         is deleted
@@ -96,4 +95,3 @@ class Rectangle:
     def __repr__(self):
         """returns a string representation of the rectangle """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-
