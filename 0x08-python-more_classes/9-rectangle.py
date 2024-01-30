@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Rosita J Uqueio
+# Dan Lewis
 
 """class Rectangle that defines a rectangle"""
 
