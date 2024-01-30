@@ -84,13 +84,12 @@ class Rectangle:
         return (self.__width + self.__height) * 2
 
     def __str__(self):
+        """returns a string representation of the rectangle """
         if (self.__width or self.__height) == 0:
             return ""
-
-        rect_str = ""
-        for _ in range(self.__height):
-            rect_str += "#" * self.__width + "\n"
-        return rect_str.rstrip()
+        line = str(self.print_symbol) * self.__width
+        rect_rows = [line] * self.__height
+        return '\n'.join(rect_rows)
 
     def __repr__(self):
         """returns a string representation of the rectangle """
