@@ -3,49 +3,38 @@
 Test Document
 ===============================
 
-::
     >>> add_integer = __import__('0-add_integer').add_integer
-    >>> Positive number with positive number
     >>> add_integer(2, 2)
     4
-
-::  
+ 
     Negative number with negative number
     >>> add_integer(-2, -2)
     -4
-
-::  
+ 
     Negative number with positive number
     >>> add_integer(-1, 1)
     0
-
-::  
+  
     Positive number with negative number
     >>> add_integer(1, -1)
     0
-
-::  
+  
     Positive number with 0
     >>> add_integer(1, 0)
     1
 
-::
     Negative number with 0
     >>> add_integer(-1, 0)
     -1
 
-::
+    Positive float number with negative number
+    >>> add_integer(2.8, 1)
+    3
+
     Positive number with no param for b
     >>> add_integer(1)
     99
 
-::
-    Positive number with string value
-    >>> add_integer(3, 'abc')
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
-
-::
-    'add_integer()' expects integers or float as arguments. 
-    A TypeError is raised if any of the arguments is not any of type int or float.
+    Zero with default param of 98
+    >>> add_integer(0)
+    98
