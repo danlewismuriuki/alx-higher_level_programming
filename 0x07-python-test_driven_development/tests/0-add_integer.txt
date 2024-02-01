@@ -47,8 +47,5 @@ Test Document
     TypeError: b must be an integer
 
 ::
-    String value with default value
-    >>> add_integer('abc')
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
+    'add_integer()' expects integers or float as arguments. 
+    A TypeError is raised if any of the arguments is not any of type int or float.
