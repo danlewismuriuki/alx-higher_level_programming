@@ -5,7 +5,14 @@
 
 
 def add_integer(a, b=98):
-    """ Adds two numbers together """
+    """ Adds two numbers together
+    Args:
+        a (int or float): The first num
+        b (int or float): The second num
+                          Default - 98
+    Returns:
+        int: The sum of the two nums
+    """
 
     if type(a) not in (int, float):
         raise TypeError("a must be an integer")
