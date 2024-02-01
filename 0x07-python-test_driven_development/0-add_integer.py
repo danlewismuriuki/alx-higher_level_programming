@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 
 # 0-add_integer.py
-""" Module has a function that adds two numbers together """
+"""
+Module has a function that adds two numbers together
+integer a and integer b
+Raises:
+TypeError: message a must be an integer or
+TypeErro: b must be an integer
+"""
 
 
 def add_integer(a, b=98):
     """ Adds two numbers together
     Args:
         a (int or float): The first num
-        b (int or float): The second num
+        b (int or float): The second nium
                           Default - 98
     Returns:
         int: The sum of the two nums
