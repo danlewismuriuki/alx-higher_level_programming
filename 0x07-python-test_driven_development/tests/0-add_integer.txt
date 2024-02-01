@@ -22,13 +22,33 @@ Test Document
 ::  
     Positive number with negative number
     >>> add_integer(1, -1)
+    0
 
 ::  
     Positive number with 0
     >>> add_integer(1, 0)
-    99
+    1
 
 ::
     Negative number with 0
     >>> add_integer(-1, 0)
-    -97
+    -1
+
+::
+    Positive number with no param for b
+    >>> add_integer(1)
+    99
+
+::
+    Positive number with string value
+    >>> add_integer(3, 'abc')
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+::
+    String value with default value
+    >>> add_integer('abc')
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
