@@ -9,5 +9,4 @@
 
 def lookup(obj):
     """ class lookup to check attributes and methods """
-    list = dir(lookup)
-    return list
+    return dir(obj)
