@@ -1,12 +1,17 @@
+The 1-my_list.py Module
+=======================
+
+""""
+Module defines class MyList that inherits from list
+"""
 
 >>> MyList = __import__('1-my_list').MyList
 
 Test Cases:
-============
+==========
+#checking with integers
 
-# Appending integers to empty list
-
->>> my_list = Mylist()
+>>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
 >>> my_list.append(2)
@@ -15,16 +20,17 @@ Test Cases:
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
-# elements will be sorted
+List will be printed in acending order
+
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
-# Creating an instance of My_List with a list array
->>> my_list = Mylist([1, -4, 2, -3, 5])
+>>> my_list = MyList([1, -4, 2, -3, 5])
 >>> my_list.print_sorted()
 [-4, -3, 1, 2, 5]
 
-#sorting 
->>> my_list = MyList(["alex", "mark", "dan", "eric", "jake"])
+# Sorts strings too
+
+>>> my_list = MyList(["alpha", "gamma", "delta", "theta", "beta"])
 >>> my_list.print_sorted()
-['alex', 'dan', 'eric', 'jake', 'mark']
+['alpha', 'beta', 'delta', 'gamma', 'theta']
