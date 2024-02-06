@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# Rosita J Uqueio
 
 """Defining a text file-reading function."""
 
