@@ -18,6 +18,7 @@ try:
 except FileNotFoundError:
     json_list = []
 
+
 for arg in argv[1:]:
     json_list.append(arg)
 
