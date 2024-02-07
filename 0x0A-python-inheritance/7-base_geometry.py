@@ -11,6 +11,7 @@ class BaseGeometry():
     raises: excpetion area() is not implemented
     """
     def area(self):
+        """ class with public instant methods """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
