@@ -1,20 +1,31 @@
 #!/usr/bin/python3
-"""
-Script that adds all arguments to a Python list, and then saves them to a file
-"""
+# Rosita J Uqueio
 
-from sys import argv
-save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
-load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
+"""Add all args to Python list & save them to a file."""
+import sys
+import json
+from os.path import exists
 
-filename = "add_item.json"
 
-try:
-    json_list = load_from_json_file(filename)
-except FileNotFoundError:
-    json_list = []
+def save_to_json_file(my_obj, filename):
+    """Save an object to a JSON file."""
+    with open(filename, mode='w', encoding='utf-8') as file:
+        json.dump(my_obj, file)
 
-for arg in argv[1:]:
-    json_list.append(arg)
 
-save_to_json_file(json_list, filename)
+def load_from_json_file(filename):
+    """Load an object from a JSON file."""
+    if exists(filename):
+        with open(filename, mode='r', encoding='utf-8') as file:
+            return json.load(file)
+    return []
+
+
+if __name__ == "__main__":
+    try:
+        items = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        items = []
+
+    items.extend(sys.argv[1:])
+    save_to_json_file(items, "add_item.json")
