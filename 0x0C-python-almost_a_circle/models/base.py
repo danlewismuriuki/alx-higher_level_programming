@@ -5,6 +5,7 @@ Module containing the Base class
 """
 import json
 
+
 class Base:
     """ base class for alll obects in the project """
 
@@ -36,5 +37,7 @@ class Base:
             # creates ajsn file dynamically
         filename = f"{cls.__name__}.json"
         with open(filename, "w") as f:
-            json_string = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            json_string = cls.to_json_string(
+                    [obj.to_dictionary() for obj in list_objs]
+            )
             f.write(json_string)
