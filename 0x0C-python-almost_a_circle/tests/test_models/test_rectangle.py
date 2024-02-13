@@ -1,4 +1,5 @@
 import unittest
+from models.base import Base
 from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
@@ -32,6 +33,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.height, 35)
         self.assertEqual(rect.x, 15)
         self.assertEqual(rect.y, 18)
+
+    def test_invalid_value(self):
+        """ Test seting invalid values """
+        rect = rectangle(10, 20)
+        with self.assertRaises(ValueError):
+            rect.width = -5
+        with self.assertRaises(ValueError):
+            rect.height = "invalid"
+        with self.assertRaises(ValueError):
+            rect.x = [1, 2, 3]
+        with self.assertRaises(ValueError):
+            rect.y = None
 
   if __name__ == '__main__':
       unittest.main()

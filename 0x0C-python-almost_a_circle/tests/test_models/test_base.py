@@ -17,8 +17,3 @@ class TestBase(unittest.TestCase):
         base_instance2 = Base()
         self.assertEqual(base_instance.id, 1)
         self.assertEqual(base_instance.id, 2)
-
-    #question2Base
-    def test_nb_ojects_incrementing(self):
-if __name__ == '__main__':
-    unittest.main()
