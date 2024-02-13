@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# rectangle.py
+""" Defines a rectangle class """
+# Base = __import__("base").Base
+from .base import Base
 
 """
 Rectangle Module
@@ -20,11 +22,9 @@ Key Features:
         and unique identifier
 """
 
-# Base = __import__("base").Base
-from .base import Base
-
 
 class Rectangle(Base):
+    """ Represents a rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initialize a new Rectangle instance
