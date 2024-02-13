@@ -19,7 +19,3 @@ Briefly introduce your project, covering the topics to be discussed in this READ
 ## Unit Testing
 
 Explain the importance of unit testing in your project and provide instructions on how to run tests.
-
-```bash
-pytest tests/`
-
