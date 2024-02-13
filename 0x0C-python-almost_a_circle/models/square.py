@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Defines the area of a square """
 
 from .rectangle import Rectangle
 
