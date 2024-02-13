@@ -82,7 +82,9 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
-        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(
+                self.id, self.__x, self.__y, self.__width, self.__height
+                )
 
     # def update(self, *args):
     #    attributes = ["id", "width", "height", "x", "y"]
@@ -110,5 +112,11 @@ class Rectangle(Base):
                 y: "self.y"
                 }
          """
-        myDict = dict(x = self.x, y = self.y, id = self.id, height = self.height, width = self.width)
+        myDict = dict(
+                x=self.x,
+                y=self.y,
+                id=self.id,
+                height=self.height,
+                width=self.width
+        )
         return myDict

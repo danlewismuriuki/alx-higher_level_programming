@@ -2,6 +2,7 @@
 
 from .rectangle import Rectangle
 
+
 class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
@@ -19,7 +20,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Representation of reader friendly string of a class obj """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.width
+                )
 
     def update(self, *args, **kwargs):
         if args:
@@ -35,5 +38,5 @@ class Square(Rectangle):
             self.y = kwargs.get("y", self.y)
 
     def to_dictionary(self):
-        myDict = dict(id = self.id, size = self.size, x = self.x, y = self.y)
+        myDict = dict(id=self.id, size=self.size, x=self.x, y=self.y)
         return myDict
