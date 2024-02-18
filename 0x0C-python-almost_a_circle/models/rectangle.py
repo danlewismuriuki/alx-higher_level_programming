@@ -181,11 +181,6 @@ class Rectangle(Base):
                 self.id, self.__x, self.__y, self.__width, self.__height
                 )
 
-    # def update(self, *args):
-    #    attributes = ["id", "width", "height", "x", "y"]
-    #    for i in range(min(len(args), len(attributes))):
-    #       setattr(self, attributes[i], args[i])
-
     def update(self, *args, **kwargs):
         """
         Updates the attributes of the Rectangle object.
