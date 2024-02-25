@@ -1,0 +1,64 @@
+======================
+```4-print_square```
+======================
+
+"""
+This is test for a function which takes one value for size
+"""
+
+===================================
+How to use the ```4-print_square```
+===================================
+
+Importing the function print_square
+    >>> print_square = __import__("4-print_square").print_square
+
+Checking the for module docstrings
+    >>> m = __import__("4-print_square").__doc__
+    >>> len(m) > 1
+    True
+
+checking the function doctrings
+    >>> f = __import__("4-print_square").print_square.__doc__
+    >>> len(f) > 1
+    True
+
+checking for int parameter
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+checking for 1 argument 
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+
+checking for when argument is 0:
+    >>> print_square(0)
+
+
+checking for when argument is 1
+    >>> print_square(1)
+    #
+
+checking for no value given
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+checking argumanet is negative
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
