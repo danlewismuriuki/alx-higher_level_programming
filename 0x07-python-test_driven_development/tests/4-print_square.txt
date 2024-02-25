@@ -62,3 +62,9 @@ checking argumanet is negative
     Traceback (most recent call last):
     ...
     ValueError: size must be >= 0
+
+checking for non numbers
+    >>> print_square("4")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
