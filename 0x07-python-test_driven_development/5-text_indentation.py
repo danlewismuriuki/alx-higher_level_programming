@@ -27,7 +27,7 @@ def text_indentation(text):
         # Add the current character to the new text
         new_text += char
         # check if the current character is one of the specified symbols
-        if char in ["." or "?" or ":"]:
+        if char in [".", "?", ":"]:
             # If so, add two new lines after the character
             new_text += "\n\n"
     print(new_text.strip())
