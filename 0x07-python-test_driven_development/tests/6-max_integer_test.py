@@ -25,3 +25,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_case_7(self):
         self.assertEqual(max_integer([4]), 4)
+
+    def test_case_8(self):
+        with self.assertRaises(ValueError):
+            max_integer([])
