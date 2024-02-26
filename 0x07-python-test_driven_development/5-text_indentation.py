@@ -30,8 +30,9 @@ def text_indentation(text):
         if char in ["." or "?" or ":"]:
             # If so, add two new lines after the character
             new_text += "\n\n"
+    print(new_text.strip())
     # split the new text into lines
-    lines = new_text.split("\n")
+    # lines = new_text.split("\n")
     # print each line with leading leading and trailing whitespaces removed
-    for line in lines:
-        print(line.strip())
+    # for line in lines:
+    #    print(line.strip())
