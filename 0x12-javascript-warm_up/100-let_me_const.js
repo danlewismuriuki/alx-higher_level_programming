@@ -1,5 +1,3 @@
 #!/usr/bin/node
 
-module.exports = {
-  myVar : 333
-};
+myVar : 333;
