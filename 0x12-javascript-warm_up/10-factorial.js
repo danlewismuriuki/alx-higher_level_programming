@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function factorial(n) {
+function factorial (n) {
   // Base case: factorial of 0 is 1
   if (isNaN(n)) {
     return 1;
@@ -14,4 +14,3 @@ function factorial(n) {
 
 const num = parseInt(process.argv[2]);
 console.log(factorial(num));
-
