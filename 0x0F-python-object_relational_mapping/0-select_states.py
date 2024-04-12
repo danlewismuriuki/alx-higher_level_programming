@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module connects a python script to a databse
+"""
 
 import sys
 import MySQLdb
@@ -19,7 +22,7 @@ def city_list(mysql_username, mysql_password, database_name):
     cursor = connection.cursor()
 
 
-    query = ("SELECT * FROM states ORDER BY states.id ASC")
+    query = ("SELECT DISTINCT * FROM states ORDER BY states.id ASC")
 
     cursor.execute(query)
 
