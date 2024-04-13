@@ -28,8 +28,9 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
 
     rows = cursor.fetchall()
 
-    for row in rows:
-        print(row)
+    if rows:
+        for row in rows:
+            print(row)
 
     cursor.close()
     connection.close()
