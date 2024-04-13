@@ -13,11 +13,12 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
 
     connection = MySQLdb.connect(
             user=mysql_username,
-            passwd=mysql_password,
             host="localhost",
+            passwd=mysql_password,
+            port=3306,
             db=database_name,
-            port=3306
             )
+
     # create a cursor object tointeract with the database
     cursor = connection.cursor()
 
