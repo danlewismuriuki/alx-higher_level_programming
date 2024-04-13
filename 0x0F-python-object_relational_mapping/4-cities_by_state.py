@@ -1,19 +1,24 @@
 #!/usr/bin/python3
 
+"""
+Module that connects a python script to a database
+"""
+
 import sys
 import MySQLdb
 
 
 def city_by_state(mysql_username, mysql_password, database_name):
+
     connection = MySQLdb.connect(
             user=mysql_username,
-            passwd= mysql_password,
+            passwd=mysql_password,
             host="localhost",
             db=database_name,
             port=3306
             )
 
-    #create a cursor objectt to interact with the database
+    # create a cursor objectt to interact with the database
     cursor = connection.cursor()
 
     query = """
@@ -35,7 +40,7 @@ def city_by_state(mysql_username, mysql_password, database_name):
 
 
 if __name__ == "__main__":
-    #Read the arguments from the cli
+    # Read the arguments from the cli
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
