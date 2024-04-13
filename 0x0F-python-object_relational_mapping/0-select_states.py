@@ -22,7 +22,7 @@ def city_list(mysql_username, mysql_password, database_name):
     cursor = connection.cursor()
 
 
-    query = "SELECT * FROM states ORDER BY states.id ASC LIMIT 5"
+    query = "SELECT * FROM states ORDER BY states.id ASC"
 
     cursor.execute(query)
 
