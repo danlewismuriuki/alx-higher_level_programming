@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 This module connects a python script to a databse
 """
