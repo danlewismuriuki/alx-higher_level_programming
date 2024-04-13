@@ -11,7 +11,7 @@ import MySQLdb
 def display_values(mysql_username, mysql_password, database_name, state_name):
 
 
-    connect = MySQLdb.Connection(
+    connection = MySQLdb.connect(
             user=mysql_username,
             passwd=mysql_password,
             host="localhost",
@@ -20,7 +20,7 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
             )
 
 
-    cursor = connect.cursor()
+    cursor = connection.cursor()
 
     query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC;"
 
@@ -32,7 +32,7 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
         print(row)
 
     cursor.close()
-    connect.close()
+    connection.close()
 
 
 if __name__ == "__main__":
