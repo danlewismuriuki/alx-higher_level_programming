@@ -22,10 +22,8 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
     cursor = connection.cursor()
 
     # Create the query using format() to insert user input safely
-    query = "SELECT *
-    FROM states
-    WHERE name = '{}'
-    ORDER BY id ASC".format(state_name)
+    query = "SELECT * FROM states WHERE name = '{}' "\
+            "ORDER BY id ASC".format(state_name)
 
     # Execute the query
     cursor.execute(query)
