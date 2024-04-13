@@ -15,7 +15,7 @@ def my_city(mysql_username, mysql_password, database_name):
 
     cursor = connection.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
 
     cursor.execute(query)
 
@@ -28,6 +28,7 @@ def my_city(mysql_username, mysql_password, database_name):
     connection.close()
 
 if __name__ == "__main__":
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
