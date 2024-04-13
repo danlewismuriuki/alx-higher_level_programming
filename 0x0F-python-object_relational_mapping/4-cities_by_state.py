@@ -9,15 +9,19 @@ def city_by_state(mysql_username, mysql_password, database_name):
             user=mysql_username,
             passwd= mysql_password,
             host="localhost",
-            port=3306,
-            db=database_name
+            db=database_name,
+            port=3306
             )
 
-
+    #create a cursor objectt to interact with the database
     cursor = connection.cursor()
 
-    query = "SELECT cities.id, cities.name, states.name FROM cities "\
-            "JOIN states ON states.id = cities.state_id ORDER BY cities.id ASC"
+    query = """
+    SELECT cities.id, cities.name, states.name
+    FROM cities
+    JOIN states ON states.id = cities.state_id
+    ORDER BY cities.id ASC
+    """
 
     cursor.execute(query)
 
@@ -35,3 +39,5 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
+
+    city_by_state(mysql_username, mysql_password, database_name)
