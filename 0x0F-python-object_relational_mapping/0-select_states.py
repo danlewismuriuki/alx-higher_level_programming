@@ -17,10 +17,8 @@ def city_list(mysql_username, mysql_password, database_name):
             db=database_name
             )
 
-
     # create a cursor object to interact with the database
     cursor = connection.cursor()
-
 
     query = "SELECT * FROM states ORDER BY states.id ASC;"
 
@@ -33,6 +31,7 @@ def city_list(mysql_username, mysql_password, database_name):
 
     cursor.close()
     connection.close()
+
 
 if __name__ == "__main__":
     # Read the arguments from the cli
