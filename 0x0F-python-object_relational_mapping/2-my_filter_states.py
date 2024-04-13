@@ -9,6 +9,8 @@ import MySQLdb
 
 
 def display_values(mysql_username, mysql_password, database_name, state_name):
+
+
     connect = MySQLdb.Connection(
             user=mysql_username,
             passwd=mysql_password,
@@ -20,7 +22,7 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
 
     cursor = connect.cursor()
 
-    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC;"
 
     cursor.execute(query, (state_name,))
 
@@ -34,6 +36,7 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
 
 
 if __name__ == "__main__":
+    # Read the arguments from the cli
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
