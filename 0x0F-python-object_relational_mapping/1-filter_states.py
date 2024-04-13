@@ -20,7 +20,7 @@ def city_list(mysql_username, mysql_password, database_name):
     # create a cursor object to interact with the database
     cursor = connection.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
 
     cursor.execute(query)
 
