@@ -18,8 +18,7 @@ def display_values(mysql_username, mysql_password, database_name, state_name):
             db=database_name,
             port=3306
             )
-
-
+    # create a cursor object tointeract with the database
     cursor = connection.cursor()
 
     query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC;"
