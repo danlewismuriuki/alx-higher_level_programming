@@ -34,6 +34,7 @@ def fetch_first_state(mysql_username, mysql_password, database_name):
     # close the session
     Session.close()
 
+
 if __name__ == "__main__":
     # read command line arguments
     mysql_username = argv[1]
