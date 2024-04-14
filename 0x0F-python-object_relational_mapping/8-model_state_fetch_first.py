@@ -8,21 +8,37 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-if __name__ == "__main__":
 
+def fetch_first_state(mysql_username, mysql_password, database_name):
+    """ Fetches the first state object from the database and prints it """
+
+    # create a connection with the databse
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(argv[1], argv[2], argv[3]),
-        pool_pre_ping=True
+            f'mysql+mysqldb://{mysql_username}:{mysql_password}@localhost/'
+            f'{database_name}',
+            pool_pre_ping=True
     )
 
-    my_session_maker = sessionmaker(bind=engine)
-    my_session = my_session_maker()
+    Session = sessionmaker(bind=engine)
+    Session = Session()
 
-    state = my_session.query(State).order_by(State.id).first()
-    if state is None:
-        print("Nothing")
+    # Query the first state ordered by states.id
+    first_state = Session.query(State).order_by(State.id).first()
+
+    # Query the first state ordered by states.id
+    if first_state:
+        print(f"{first_state.id}: {first_state.name}")
     else:
-        print("{}: {}".format(state.id, state.name))
+        print("Nothing")
 
-    my_session.close()
+    # close the session
+    Session.close()
+
+if __name__ == "__main__":
+    # read command line arguments
+    mysql_username = argv[1]
+    mysql_password = argv[2]
+    database_name = argv[3]
+
+    # Fetch and print the first state
+    fetch_first_state(mysql_username, mysql_password, database_name)
