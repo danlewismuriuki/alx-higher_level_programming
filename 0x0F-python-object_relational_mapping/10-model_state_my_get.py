@@ -19,7 +19,11 @@ if __name__ == "__main__":
     my_session_maker = sessionmaker(bind=engine)
     my_session = my_session_maker()
 
-    for state in my_session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    for state in my_session.query(State):
+        if argv[4] == state.name:
+            print("{}".format(state.id))
+            break
+    else:
+        print("Not found")
 
     my_session.close()

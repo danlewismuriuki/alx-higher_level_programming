@@ -19,7 +19,11 @@ if __name__ == "__main__":
     my_session_maker = sessionmaker(bind=engine)
     my_session = my_session_maker()
 
-    for state in my_session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    Base.metadata.create_all(engine)
+
+    new_obj = State(name="Louisiana")
+    my_session.add(new_obj)
+    my_session.commit()
+    print(new_obj.id)
 
     my_session.close()

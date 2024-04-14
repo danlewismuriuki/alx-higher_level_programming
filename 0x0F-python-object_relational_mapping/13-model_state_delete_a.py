@@ -19,7 +19,9 @@ if __name__ == "__main__":
     my_session_maker = sessionmaker(bind=engine)
     my_session = my_session_maker()
 
-    for state in my_session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    states = my_session.query(State).filter(State.name.like('%a%')).all()
+    for state in states:
+        my_session.delete(state)
+    my_session.commit()
 
     my_session.close()
