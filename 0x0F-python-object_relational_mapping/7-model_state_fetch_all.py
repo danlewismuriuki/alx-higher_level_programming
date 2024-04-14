@@ -1,25 +1,50 @@
 #!/usr/bin/python3
 
 """
-Module that connects python script to a database
+This script lists all State objects from the database hbtn_0e_6_usa.
+It takes three command-line arguments: mysql username, mysql password,
+and database name.
+It uses the module SQLAlchemy and imports State and Base from model_state.
+The script connects to a MySQL server running on localhost at port 3306.
+Results are sorted in ascending order by states.id and displayed as specified.
 """
-from sys import argv
-from sqlalchemy import create_engine
+
+import sys
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 from model_state import Base, State
 
-if __name__ == "__main__":
+
+def model_state_fetch_all(mysql_username, mysql_password, database_name):
+    """ Lists all state objects from the database hbtn_0e_6_usa."""
 
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(argv[1], argv[2], argv[3]),
+        f'mysql+mysqldb://{mysql_username}:{mysql_password}@localhost/'
+        f'{database_name}',
         pool_pre_ping=True
     )
 
-    my_session_maker = sessionmaker(bind=engine)
-    my_session = my_session_maker()
+    # create a session using the engine
+    session = sessionmaker(bind=engine)
+    session = session()
 
-    for state in my_session.query(State).order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    # Display the states in the format: "<state_id>:"
+    states = session.query(State).order_by(State.id).all()
 
-    my_session.close()
+    for state in states:
+        print(f"{state.id}: {state.name}")
+
+    session.close()
+
+
+if __name__ == "__main__":
+    # Retrive commands from the cli
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
+
+    model_state_fetch_all(
+            mysql_username,
+            mysql_password,
+            database_name
+            )
