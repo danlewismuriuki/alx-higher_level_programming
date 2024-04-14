@@ -2,15 +2,18 @@
 
 """
 This script lists all State objects from the database hbtn_0e_6_usa.
-It takes three command-line arguments: mysql username, mysql password, and database name.
-It uses the module SQLAlchemy and imports State and Base from model_state.
-The script connects to a MySQL server running on localhost at port 3306.
-Results are sorted in ascending order by states.id and displayed as specified.
+It takes three command-line arguments: mysql username, mysql password,
+and database name.It uses the module SQLAlchemy and imports State and Base
+from model_state.The script connects to a MySQL server
+running on localhost at port 3306.Results are sorted in ascending
+order by states.id
+and displayed as specified.
 """
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+
 
 def list_states(mysql_username, mysql_password, database_name):
     """Lists all State objects from the database hbtn_0e_6_usa."""
@@ -34,6 +37,7 @@ def list_states(mysql_username, mysql_password, database_name):
 
     # close the session
     session.close()
+
 
 if __name__ == "__main__":
     # get command-line arguments
