@@ -8,22 +8,51 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-if __name__ == "__main__":
 
+def model_state_my_get(
+        mysql_username,
+        mysql_password,
+        database_name,
+        state_name
+        ):
+    """ Fetches the state object with the given name from the
+    database and prints its ID
+    """
+    # Create a connection with the database
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(argv[1], argv[2], argv[3]),
-        pool_pre_ping=True
+            f'mysql+mysqldb://{mysql_username}:{mysql_password}@localhost/'
+            f'{database_name}',
+            pool_pre_ping=True
     )
 
-    my_session_maker = sessionmaker(bind=engine)
-    my_session = my_session_maker()
+    # Create a session using the engine
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    for state in my_session.query(State):
-        if argv[4] == state.name:
-            print("{}".format(state.id))
-            break
+    # Query the State object with the given name
+    state = session.query(State).filter(State.name == state_name).first()
+
+    # Print the ID of the state if found, else print "Not found"
+    if state:
+        print(state.id)
     else:
         print("Not found")
 
-    my_session.close()
+    # Close the session
+    session.close()
+
+
+if __name__ == "__main__":
+    # Read command-line arguments
+    mysql_username = argv[1]
+    mysql_password = argv[2]
+    database_name = argv[3]
+    state_name = argv[4]
+
+    # Fetch and print the state by name
+    model_state_my_get(
+            mysql_username,
+            mysql_password,
+            database_name,
+            state_name
+            )
