@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+
+"""
+Module that connects a python script to the database
+"""
+
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
