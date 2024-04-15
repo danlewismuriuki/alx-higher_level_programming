@@ -16,7 +16,8 @@ def fetch_cities_by_state(mysql_username, mysql_password, database_name):
 
     # Create a connection to the database
     engine = create_engine(
-        f'mysql+mysqldb://{mysql_username}:{mysql_password}@localhost/{database_name}',
+        f'mysql+mysqldb://{mysql_username}:{mysql_password}@localhost/'
+        f'{database_name}',
         pool_pre_ping=True
     )
 
@@ -43,4 +44,3 @@ if __name__ == "__main__":
 
     # Fetch and print cities by state
     fetch_cities_by_state(mysql_username, mysql_password, database_name)
-
