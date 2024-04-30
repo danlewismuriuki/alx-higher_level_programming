@@ -1,11 +1,13 @@
-#!/bin/bash
+#!/usr/bin/python3
+""" Deines a peak-finding algorithm"""
+
 
 def find_peak(list_of_integers):
     # Check for empty array
     if list_of_integers == []:
         return None
 
-    #get length of the array
+    # get length of the array
     size = len(list_of_integers)
 
     if size == 1:
@@ -16,11 +18,12 @@ def find_peak(list_of_integers):
     # Divide the list length
     mid_size = int(size/2)
 
-    #Assume the midsize is the peak
+    # Assume the midsize is the peak
     peak_array = list_of_integers[mid_size]
 
     # check right and left adjacents to the mid value
-    if peak_array > list_of_integers[mid_size - 1] and peak_array > list_of_integers[mid_size + 1]:
+    if (peak_array > list_of_integers[mid_size - 1] and
+            peak_array > list_of_integers[mid_size + 1]):
         return peak_array
 
     # if peak is less than right value recurse and check
