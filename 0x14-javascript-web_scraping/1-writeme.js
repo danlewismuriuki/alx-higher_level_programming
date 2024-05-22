@@ -35,7 +35,7 @@ if (!content) {
 }
 
 // write contet to the specified file
-fs.writeFile(filepath, content, err => {
+fs.writeFile(filepath, content, 'utf-8', err => {
   if (err) {
     console.error(err);
   } else {
