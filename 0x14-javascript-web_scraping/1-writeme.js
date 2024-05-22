@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// write a string to a file
 
 /**
  * write a string to a file
